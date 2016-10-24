@@ -4,14 +4,14 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: easy digital downloads, digital, download, downloads, edd, rubengc, admin, tab, tabs, order, e-commerce
 Requires at least: 4.0
 Tested up to: 4.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Better organization of download's edit page with tabs
 
 == Description ==
-This plugin requires [Easy Digital Downloads](http://wordpress.org/extend/plugins/easy-digital-downloads/ "Easy Digital Downloads") v2.3 or greater.
+This plugin requires [Easy Digital Downloads](http://wordpress.org/extend/plugins/easy-digital-downloads/ "Easy Digital Downloads").
 
 Once activated, EDD Admin Tabs will distribute meta boxes from download's edit page in tabs.
 
@@ -93,6 +93,9 @@ Note: Meta boxes that are not in a tab will be kept always visible, such as subm
 == Upgrade Notice ==
 
 == Changelog ==
+
+= 1.0.1 =
+* Added support for Yoast SEO
 
 = 1.0 =
 * Initial release

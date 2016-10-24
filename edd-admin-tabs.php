@@ -171,6 +171,16 @@ if( !class_exists( 'EDD_Admin_Tabs' ) ) {
                     );
                 }
 
+                if( class_exists('WPSEO_Meta') ) {
+                    // Support for Yoast SEO
+                    $tabs['seo'] = array(
+                        'label' => 'SEO',
+                        'selectors' => array(
+                            '#wpseo_meta',
+                        )
+                    );
+                }
+
                 $tabs['feedback'] = array(
                     'label' => 'Feedback',
                     'selectors' => array(
