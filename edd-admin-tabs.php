@@ -3,14 +3,14 @@
  * Plugin Name:     EDD Admin Tabs
  * Plugin URI:      https://wordpress.org/plugins/edd-admin-tabs/
  * Description:     Better organization of download's edit page with tabs
- * Version:         1.0.0
- * Author:          rubengc
- * Author URI:      http://rubengc.com
+ * Version:         1.0.2
+ * Author:          Tsunoa
+ * Author URI:      https://tsunoa.com
  * Text Domain:     edd-admin-tabs
  *
  * @package         EDD\Admin_Tabs
- * @author          rubengc
- * @copyright       Copyright (c) rubengc
+ * @author          Tsunoa
+ * @copyright       Copyright (c) Tsunoa
  */
 
 
@@ -135,7 +135,7 @@ if( !class_exists( 'EDD_Admin_Tabs' ) ) {
                 $tabs =  array();
 
                 $tabs['general'] =  array(
-                    'label' => 'General Information',
+                    'label' => __( 'General Information', 'edd-admin-tabs' ),
                     'selectors' => array(
                         '#titlediv',
                         '#postdivrich',
@@ -147,21 +147,42 @@ if( !class_exists( 'EDD_Admin_Tabs' ) ) {
                         '#postimagediv',
                         // Support for EDD Googl
                         '#edd-googl-shortlink-box',
+                        // Support for Visual Composer
+                        '.composer-switch',
+                        '#wpb_visual_composer',
+                        // Support for Restrict content
+                        '#rcMetaBox',
+                        // Support for The SEO Framework
+                        '#tsf-inpost-box',
                     )
                 );
 
                 $tabs['price-files'] = array(
-                    'label' => 'Prices and files',
+                    'label' => __( 'Prices and Files' , 'edd-admin-tabs' ),
                     'selectors' => array(
                         '#edd_product_prices',
                         '#edd_product_files',
                     )
                 );
 
+                if( class_exists('EDD_Software_Licensing') ) {
+                    // Support for EDD SL
+                    $tabs['sl'] = array(
+                        'label' => __( 'Software Licensing', 'edd-admin-tabs' ),
+                        'selectors' => array(
+                            '#edd_sl_box',
+                            '#edd_sl_upgrade_paths_box',
+                            '#edd_sl_beta_box',
+                            '#edd_sl_readme_box',
+                            '#edd-generate-missing-licenses',
+                        )
+                    );
+                }
+
                 if( class_exists('EDD_Front_End_Submissions') ) {
                     // Support for EDD FES
                     $tabs['fes'] = array(
-                        'label' => 'Vendor',
+                        'label' => __( 'Vendor', 'edd-admin-tabs' ),
                         'selectors' => array(
                             '#fes-custom-fields',
                             '#authordiv',
@@ -174,7 +195,7 @@ if( !class_exists( 'EDD_Admin_Tabs' ) ) {
                 if( class_exists('WPSEO_Meta') ) {
                     // Support for Yoast SEO
                     $tabs['seo'] = array(
-                        'label' => 'SEO',
+                        'label' => __( 'SEO', 'edd-admin-tabs' ),
                         'selectors' => array(
                             '#wpseo_meta',
                         )
@@ -182,7 +203,7 @@ if( !class_exists( 'EDD_Admin_Tabs' ) ) {
                 }
 
                 $tabs['feedback'] = array(
-                    'label' => 'Feedback',
+                    'label' => __( 'Feedback', 'edd-admin-tabs' ),
                     'selectors' => array(
                         '#commentstatusdiv',
                         '#commentsdiv',
@@ -191,6 +212,16 @@ if( !class_exists( 'EDD_Admin_Tabs' ) ) {
                         '#edd-reviews',
                     )
                 );
+
+                // If download support revisions, add a new tab
+                if( post_type_supports( 'download', 'revisions' ) ) {
+                    $tabs['revisions'] = array(
+                        'label' => __( 'Revisions', 'edd-admin-tabs' ),
+                        'selectors' => array(
+                            '#revisionsdiv',
+                        )
+                    );
+                }
 
                 $tabs = apply_filters( 'edd_admin_tabs_download_tabs', $tabs );
 

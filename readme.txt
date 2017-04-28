@@ -1,10 +1,10 @@
 === EDD Admin Tabs ===
-Contributors: rubengc
+Contributors: tsunoa, rubengc
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=64N6CERD8LPZN
-Tags: easy digital downloads, digital, download, downloads, edd, rubengc, admin, tab, tabs, order, e-commerce
+Tags: easy digital downloads, digital, download, downloads, edd, tsunoa, rubengc, admin, tab, tabs, order, e-commerce
 Requires at least: 4.0
-Tested up to: 4.6
-Stable tag: 1.0.1
+Tested up to: 4.7.4
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,15 +19,22 @@ Current tabs distribution:
 
 1. General Information
 1. Prices and files
+1. Software Licensing
 1. Vendor (FES and Commissions meta boxes)
 1. Feedback (Comments and reviews)
+1. Revisions (If download post type supports it)
 
 Supported plugins:
 
 1. EDD Frontend Submissions
 1. EDD Commissions
 1. EDD Reviews
+1. EDD Software Licensing
 1. EDD Googl
+1. Restrict Content
+1. Visual Composer
+1. The SEO Framework
+1. Yoast SEO
 
 If you want support for any plugin you can send to me an email at rubengcdev@gmail.com.
 
@@ -93,6 +100,14 @@ Note: Meta boxes that are not in a tab will be kept always visible, such as subm
 == Upgrade Notice ==
 
 == Changelog ==
+
+= 1.0.2 =
+* Added support for:
+Revisions (If download post type supports it)
+EDD Software Licensing
+Restrict content
+Visual Composer
+The SEO Framework
 
 = 1.0.1 =
 * Added support for Yoast SEO
